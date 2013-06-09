@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -21,8 +20,7 @@ import java.util.Date;
  */
 public class EscritorDeArchivos {
 
-    private static final String DATE_SEPARATOR = "/";
-    public static final String SPACE = " ";
+    
     private File myFile;
     private ArrayList<String> lines;
 
@@ -41,7 +39,7 @@ public class EscritorDeArchivos {
                     results = formatDate(results);
                 }
                 builder.append(results);
-                builder.append(":");
+                builder.append(Constants.FIELD_SEPARATOR);
             } catch (Exception ex) {
                 Utils.handleException(ex);
             }
@@ -55,7 +53,7 @@ public class EscritorDeArchivos {
         StringBuilder myString = new StringBuilder();
         for (String lineas : lines) {
             myString.append(lineas);
-            myString.append("\n");
+            myString.append(Constants.NEW_LINE);
         }
     }
 
@@ -66,13 +64,13 @@ public class EscritorDeArchivos {
         int year = cal.get(Calendar.YEAR);
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DAY_OF_MONTH);
-        builderInternal.append(SPACE);
+        builderInternal.append(Constants.SPACE);
         builderInternal.append(day);
-        builderInternal.append(DATE_SEPARATOR);
+        builderInternal.append(Constants.DATE_SEPARATOR);
         builderInternal.append(month);
-        builderInternal.append(DATE_SEPARATOR);
+        builderInternal.append(Constants.DATE_SEPARATOR);
         builderInternal.append(year);
-        builderInternal.append(SPACE);
+        builderInternal.append(Constants.SPACE);
         return builderInternal;
     }
 
@@ -80,7 +78,7 @@ public class EscritorDeArchivos {
         StringBuilder builder = new StringBuilder();
         for (String lineas : lines) {
             builder.append(lineas);
-            builder.append("\n");
+            builder.append(Constants.NEW_LINE);
         }
         String contents = builder.toString();
         FileWriter fw = null;

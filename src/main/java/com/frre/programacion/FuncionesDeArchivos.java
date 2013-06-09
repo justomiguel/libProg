@@ -5,8 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import static com.frre.programacion.Constants.*;
 
 /*
  * To change this template, choose Tools | Templates
@@ -29,7 +28,7 @@ public class FuncionesDeArchivos {
     public static File abrir(String string) {
         File arch = new File(string);
         if (!arch.exists()) {
-            System.out.println("Archivo no existe");
+            System.out.println(ARCHIVO_NO_EXISTE);
         } else {
             LectorArchivos l = new LectorArchivos(arch, string);
             myArchs.put(arch, l);
@@ -48,10 +47,10 @@ public class FuncionesDeArchivos {
                         arch.setReadable(true);
                         arch.setWritable(true);
                     } else {
-                        throw new IOException("Sin permisos para crear archivos");
+                        throw new IOException(SIN_PERMISOS_PARA_CREAR_ARCHIVOS);
                     }
                 } catch (IOException ex) {
-                    System.out.println("Archivo No puede crearse. " + ex.getClass().getName() + ex.getMessage());
+                    System.out.println(ARCHIVO__NO_PUEDE_CREARSE_ + ex.getClass().getName() + ex.getMessage());
                 }
             }
 
@@ -81,7 +80,7 @@ public class FuncionesDeArchivos {
         if (l != null) {
             l.recordToFile(reg);
         } else {
-            System.out.println("No se puede grabar en un archivo no creado");
+            System.out.println(NO_SE_PUEDE_GRABAR_EN_UN_ARCHIVO_NO_CREAD);
         }
     }
 
@@ -97,7 +96,7 @@ public class FuncionesDeArchivos {
     public static boolean FDA(File archivo) {
         LectorArchivos l = myArchs.get(archivo);
         if (l == null) {
-            System.out.println("Archivo no existe");
+            System.out.println(ARCHIVO_NO_EXISTE);
         }
         return l.FDA();
     }
@@ -114,11 +113,11 @@ public class FuncionesDeArchivos {
                     tle.writeIntoFileContents();
                     myWrittenArchs.remove(archivo);
                 } else {
-                    System.out.println("Archivo ya cerrado");
+                    System.out.println(ARCHIVO_YA_CERRADO);
                 }
             }
         } else {
-            System.out.println("Imposible cerrar un archivo que no se abrio");
+            System.out.println(IMPOSIBLE_CERRAR_UN_ARCHIVO_QUE_NO_SE_ABR);
         }
     }
 }

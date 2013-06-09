@@ -13,6 +13,8 @@ import org.joda.time.DateTimeZone;
  * @author Cleo
  */
 public final class Fecha {
+    
+ 
 
     private DateTime myDate;
 
@@ -28,19 +30,19 @@ public final class Fecha {
     public String getFecha() {
         StringBuilder builder = new StringBuilder();
         builder.append(myDate.getDayOfMonth())
-                .append("/")
+                .append(Constants.DATE_SEPARATOR)
                 .append(myDate.getMonthOfYear())
-                .append("/")
+                .append(Constants.DATE_SEPARATOR)
                 .append(myDate.getYear());
         return builder.toString();
     }
 
     public final void setFecha(String fecha) {
-        String[] date = fecha.trim().split("/");
+        String[] date = fecha.trim().split(Constants.DATE_SEPARATOR);
         int year = Integer.parseInt(date[2].trim());
         int month = Integer.parseInt(date[1].trim());
         int day = Integer.parseInt(date[0].trim());
-        myDate = new DateTime(year, month, day, 0, 0, DateTimeZone.forTimeZone(TimeZone.getTimeZone("GMT-3")));
+        myDate = new DateTime(year, month, day, 0, 0, DateTimeZone.forTimeZone(TimeZone.getTimeZone(Constants.GM_T3)));
     }
 
     public void menosDias(int days) {
@@ -67,15 +69,15 @@ public final class Fecha {
         this.myDate = myDate.plusMonths(month);
     }
 
-    public int getMes() {
+    public int getMonth() {
         return myDate.getMonthOfYear();
     }
 
-    public int getAnio() {
+    public int getYear() {
         return myDate.getYear();
     }
 
-    public int getDia() {
+    public int getDay() {
         return myDate.getDayOfMonth();
     }
 

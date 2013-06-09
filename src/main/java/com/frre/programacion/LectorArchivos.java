@@ -7,9 +7,7 @@ package com.frre.programacion;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 
@@ -18,6 +16,7 @@ import java.util.ArrayList;
  * @author developer
  */
 public class LectorArchivos<T> {
+   
 
     private File myFile;
     private int currentCounter;
@@ -41,13 +40,13 @@ public class LectorArchivos<T> {
                 String line; //not declared within while loop
 
                 while ((line = input.readLine()) != null) {
-                    if (!line.startsWith("#") && line.length() >= 1) {
+                    if (!line.startsWith(Constants.COMMENTED_LINE) && line.length() >= 1) {
                         lines.add(line);
                     }
                 }
 
                 for (String currentLine : lines) {
-                    String[] fields = currentLine.split(":");
+                    String[] fields = currentLine.split(Constants.FIELD_SEPARATOR);
                     T localReg = (T) registro.getClass().newInstance();
                     int currentFieldNumber = 0;
                     for (Field f : registro.getClass().getDeclaredFields()) {
@@ -91,6 +90,6 @@ public class LectorArchivos<T> {
     }
 
     void dispose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException(Constants.NOT_SUPPORTED); //To change body of generated methods, choose Tools | Templates.
     }
 }
