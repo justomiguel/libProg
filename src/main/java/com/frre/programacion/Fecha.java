@@ -7,12 +7,13 @@ package com.frre.programacion;
 import java.util.TimeZone;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.joda.time.ReadableInstant;
 
 /**
  *
  * @author Cleo
  */
-public final class Fecha {
+public final class Fecha implements Comparable{
     
  
 
@@ -20,6 +21,10 @@ public final class Fecha {
 
     public Fecha() {
         this.myDate = new DateTime();
+    }
+
+    public DateTime getInternalDate() {
+        return myDate;
     }
 
     public Fecha(String fecha) {
@@ -84,6 +89,12 @@ public final class Fecha {
     @Override
     public String toString() {
         return this.getFecha(); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Fecha f = (Fecha) o;
+        return this.myDate.compareTo(f.getInternalDate());
     }
     
     

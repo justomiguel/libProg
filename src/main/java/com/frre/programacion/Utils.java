@@ -4,9 +4,11 @@
  */
 package com.frre.programacion;
 
+import java.lang.reflect.Array;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import org.apache.commons.lang3.ArrayUtils;
 
 /**
  *
@@ -41,6 +43,12 @@ public class Utils {
         }
         return null;
         //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public static <T> T[] copyArray(T[] vector){
+        T[] another = (T[]) Array.newInstance(vector.getClass().getComponentType(), vector.length);
+        System.arraycopy(vector, 0, another, 0, vector.length);
+        return another;
     }
 
     public static String getSetMethod(String fieldName) {
