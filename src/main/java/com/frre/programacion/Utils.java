@@ -5,9 +5,12 @@
 package com.frre.programacion;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
@@ -69,4 +72,42 @@ public class Utils {
     static void handleException(Exception ex) {
         System.out.println(Constants.EXCEPCION_OCURRIDA_ + ex.getClass().getName()+" "+ex.getMessage());
     }
+    
+    public static IBinaryTree buildTree(Class theClass, Object[] inorder, Object[] postorder) {
+        try {
+            if (inorder.length == 0)
+                return null;
+            if (inorder.length == 1){
+                IBinaryTree tree = ((IBinaryTree) theClass.newInstance());
+                tree.setValue(inorder[0]);
+                return tree;
+            }
+            // the last item in postorder is root
+            IBinaryTree root = ((IBinaryTree) theClass.newInstance());
+            root.setValue(postorder[postorder.length - 1]);
+
+            int i = inorder.length - 1;
+            for (; !inorder[i].equals(root.getValue()); i--)
+                ;
+
+            // inorder.length == postorder.length
+            if (i < inorder.length - 1) {
+                root.setRighSon(buildTree(theClass,
+                        Arrays.copyOfRange(inorder, i + 1, inorder.length),
+                        Arrays.copyOfRange(postorder, i, postorder.length - 1)));            
+            }
+            if (i > 0) {
+                root.setLeftSon(buildTree(theClass, 
+                        Arrays.copyOfRange(inorder, 0, i),
+                        Arrays.copyOfRange(postorder, 0, i)));
+            }
+
+            return root;
+        } catch (InstantiationException ex) {
+            ex.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+}
 }
