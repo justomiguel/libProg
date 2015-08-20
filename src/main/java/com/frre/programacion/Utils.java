@@ -5,6 +5,7 @@
 package com.frre.programacion;
 
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -39,10 +40,46 @@ public class Utils {
         } else if (type.isAssignableFrom(double.class) || (type.isAssignableFrom(Double.class))) {
             return (T) new Double(string.trim().replaceAll(Constants.COMMA, Constants.DOT));
         } else if (type.isAssignableFrom(float.class) || type.isAssignableFrom(Float.class)) {
-            return (T) new Double(string.trim().replaceAll(Constants.COMMA, Constants.DOT));
+            return (T) new Float(string.trim().replaceAll(Constants.COMMA, Constants.DOT));
         } else if (type.isAssignableFrom(int.class) || type.isAssignableFrom(Integer.class)) {
             //takeout all spaces
             return (T) new Integer(string.trim());
+        }
+        return null;
+        //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static <T> T getValueACcordingType(Class<T> type) {
+
+        if (type.isAssignableFrom(String.class)) {
+            return (T) Generador.generarStringAleatorio();
+        } else if (type.isAssignableFrom(Date.class)) {
+            int year = Generador.generarNumeroAleatorio(1900, 2015);
+            int month = Generador.generarNumeroAleatorio(1, 12);
+            int day = Generador.generarNumeroAleatorio(1, 31);
+            Date d;
+            Calendar cal = GregorianCalendar.getInstance();
+            cal.set( year, month, day);
+            d = cal.getTime();
+            return (T) d;
+        } else if (type.isAssignableFrom(Fecha.class)) {
+            int year = Generador.generarNumeroAleatorio(1900, 2015);
+            int month = Generador.generarNumeroAleatorio(1, 12);
+            int day = Generador.generarNumeroAleatorio(1, 31);
+            Date d;
+            Calendar cal = GregorianCalendar.getInstance();
+            cal.set( year, month, day);
+            d = cal.getTime();
+            SimpleDateFormat sm = new SimpleDateFormat("dd/MM/yyyy");
+            return (T) new Fecha(sm.format(d));
+        } else if (type.isAssignableFrom(double.class) || (type.isAssignableFrom(Double.class))) {
+            return (T) new Double(Generador.generarNumeroAleatorio(0, 500)+"."+Generador.generarNumeroAleatorio(0, 99));
+        } else if (type.isAssignableFrom(float.class) || type.isAssignableFrom(Float.class)) {
+            return (T) new Float(Generador.generarNumeroAleatorio(0, 500));
+        } else if (type.isAssignableFrom(int.class) || type.isAssignableFrom(Integer.class)) {
+            //takeout all spaces
+            Integer integer = Generador.generarNumeroAleatorio(0, 500);
+            return (T) integer;
         }
         return null;
         //To change body of generated methods, choose Tools | Templates.

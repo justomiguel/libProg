@@ -19,6 +19,13 @@ public class Generador {
         String[] split = appelidos.split(Constants.NEW_LINE);
         return split[generarNumeroAleatorio(0, split.length-1)].trim();
     }
+
+    public static String generarStringAleatorio(){
+        String appelidos = DataSource.nombres ;
+        String[] split = appelidos.split(Constants.NEW_LINE);
+        String retorno = split[generarNumeroAleatorio(0, split.length-1)].trim();
+        return retorno;
+    }
     
      public static String generarNombreAleatorio(){
         String appelidos = DataSource.nombres;

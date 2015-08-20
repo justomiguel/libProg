@@ -3,7 +3,7 @@ Para poder bajar el codigo fuente deberan de tener instalado GIT en su computado
 
 git clone https://github.com/justomiguel/libProg.git
 
-El proyecto esta realizado con maven asi que para compilarlo no es necesario ninguna IDE solo tener JAVA isntalado y conexion a Internet. para compilar el proyecto deberan realizar
+El proyecto esta realizado con maven asi que para compilarlo no es necesario ninguna IDE solo tener JAVA instalado y conexion a Internet. para compilar el proyecto deberan realizar
 
 mvn clean install
 
