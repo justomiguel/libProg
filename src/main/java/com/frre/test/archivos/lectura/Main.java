@@ -1,5 +1,6 @@
 package com.frre.test.archivos.lectura;
 
+        import com.frre.test.archivos.Alumno;
         import com.frre.test.archivos.Empleado;
 
         import java.io.File;
@@ -13,12 +14,13 @@ public class Main {
     public static void main(String[] args){
         //muestra de funciones con archivos
         //aqui creamos un archivo
-        File archivo = abrir("/home/jvargas/empleados");
-        Empleado pp = new Empleado();
-
+        File archivo = abrir("/home/jvargas/alumn");
+        Alumno pp = new Alumno();
+        pp = leer(archivo, pp);
         while (!FDA(archivo)){
-            pp = leer(archivo, pp);
             System.out.println(pp);
+            pp = leer(archivo, pp);
+
         }
 
         cerrar(archivo);

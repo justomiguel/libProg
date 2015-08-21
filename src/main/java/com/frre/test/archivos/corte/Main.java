@@ -14,34 +14,37 @@ public class Main {
 
     private static double resguardo;
     private static String nombreEmpleado;
+    private static Empleado registro;
 
     public static void main(String[] args){
         //muestra de funciones con archivos
         //aqui creamos un archivo
 
-        Empleado pp = new Empleado();
+        registro = new Empleado();
 
-        GeneradorArchivos.generarArchivo("empleados", pp, 2000, 3);
+        GeneradorArchivos.generarArchivo("empleados", registro, 2000, 3);
 
         //con mi archivo crado cmoienzo a utilizarlo
         File archivo = abrir("empleados");
         resguardo = 0;
-        pp = leer(archivo, pp);
-        nombreEmpleado = pp.getNombre();
+        registro = leer(archivo, registro);
+        nombreEmpleado = registro.getNombre();
         while (!FDA(archivo)){
-            if (!nombreEmpleado.equalsIgnoreCase(pp.getNombre())){
-                corteEmpleado(pp);
+            if (!nombreEmpleado.equalsIgnoreCase(registro.getNombre())){
+                corteEmpleado();
             }
-            resguardo+=pp.getSueldo();
-            pp = leer(archivo, pp);
+            resguardo+= registro.getSueldo();
+            registro = leer(archivo, registro);
         }
-
+        corteEmpleado();
         cerrar(archivo);
     }
 
-    private static void corteEmpleado(Empleado pp) {
+    private static void corteEmpleado() {
         System.out.println("El sueldo total de la sucursal es "+resguardo);
         resguardo = 0;
-        nombreEmpleado = pp.getNombre();
+        if (registro!= null){
+            nombreEmpleado = registro.getNombre();
+        }
     }
 }
