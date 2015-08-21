@@ -5,25 +5,34 @@ package com.frre.test.archivos;
  */
 public class Empleado {
 
-        private String nombre;
-        private String apellido;
-        private int dni;
-        private double sueldo;
+    private String provincia;
+    private String localidad;
+    private int dni;
+    private String nomYAp;
+    private double sueldo;
 
-    public String getNombre() {
-        return nombre;
+    public String getProvincia() {
+        return provincia;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getLocalidad() {
+        return localidad;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    public String getNomYAp() {
+        return nomYAp;
+    }
+
+    public void setNomYAp(String nomYAp) {
+        this.nomYAp = nomYAp;
     }
 
     public int getDni() {
@@ -45,8 +54,8 @@ public class Empleado {
     @Override
     public String toString() {
         return "Empleado{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
+                "localidad='" + localidad + '\'' +
+                ", nomYAp='" + nomYAp + '\'' +
                 ", dni=" + dni +
                 ", sueldo=" + sueldo +
                 '}';

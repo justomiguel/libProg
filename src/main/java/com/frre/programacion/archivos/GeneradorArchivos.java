@@ -1,4 +1,7 @@
-package com.frre.programacion;
+package com.frre.programacion.archivos;
+
+import com.frre.programacion.Generador;
+import com.frre.programacion.Utils;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -6,8 +9,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 
-import static com.frre.programacion.FuncionesDeArchivos.*;
 /**
  * Created by jvargas on 8/20/15.
  */
@@ -19,20 +22,39 @@ public class GeneradorArchivos {
 
     public static <T> void generarArchivo(String nombreArchivo, T registro, int cantRegistros, final int cantClaves) {
         try{
-            File archivo = abrir(nombreArchivo, true);
+            File archivo = FuncionesDeArchivos.abrir(nombreArchivo, true);
             ArrayList<T> registros = new ArrayList<T>();
+
+            //obtengo primero todos los valores
+            Field[] campos = registro.getClass().getDeclaredFields();
+            HashMap<Field, OcurrenceLimiter> valores = new HashMap<Field, OcurrenceLimiter>();
+            for (int j = 0; j < campos.length; j++) {
+                Field f = campos[j];
+                int tope = 2*cantRegistros/100;
+                int cantValores = Generador.generarEnteroAleatorio(1,tope == 0? cantRegistros : tope);
+                OcurrenceLimiter ocurrenceLimiter = new OcurrenceLimiter(cantValores, f.getType());
+
+                Method method = registro.getClass().getDeclaredMethod(Utils.getSetMethod(f.getName()), f.getType());
+
+                for (int i = 0; i < cantValores; i++) {
+                    ocurrenceLimiter.add(Utils.getValueAccordingTypeAndMethodName(f.getType(), method.getName()));
+                }
+                valores.put(f, ocurrenceLimiter);
+            }
 
             for (int i = 0; i < cantRegistros; i++) {
                 T localReg = (T) registro.getClass().newInstance();
-                Field[] campos = localReg.getClass().getDeclaredFields();
                 for (int j = 0; j < campos.length; j++) {
                     Field f = campos[j];
                     Method method = localReg.getClass().getDeclaredMethod(Utils.getSetMethod(f.getName()), f.getType());
                     Class<?> tipo = f.getType();
-                    method.invoke(localReg, Utils.getValueACcordingType(tipo));
+                    OcurrenceLimiter ocurrenceLimiter = valores.get(f);
+                    int numero = Generador.generarEnteroAleatorio(0, ocurrenceLimiter.getSize()-1);
+                    method.invoke(localReg, ocurrenceLimiter.get(numero));
                 }
                 registros.add(localReg);
             }
+
             if (cantClaves > 0){
                 Collections.sort(registros, new Comparator<T>() {
                     @Override
@@ -59,9 +81,9 @@ public class GeneradorArchivos {
                 });
             }
             for(T theRegister:registros){
-                grabar(archivo, theRegister);
+                FuncionesDeArchivos.grabar(archivo, theRegister);
             }
-            cerrar(archivo);
+            FuncionesDeArchivos.cerrar(archivo);
         } catch (Exception ex) {
             Utils.handleException(ex);
         }

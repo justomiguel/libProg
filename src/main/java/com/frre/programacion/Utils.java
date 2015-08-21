@@ -10,9 +10,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.apache.commons.lang3.ArrayUtils;
+
+import com.frre.programacion.data.Constants;
 
 /**
  *
@@ -54,18 +53,18 @@ public class Utils {
         if (type.isAssignableFrom(String.class)) {
             return (T) Generador.generarStringAleatorio();
         } else if (type.isAssignableFrom(Date.class)) {
-            int year = Generador.generarNumeroAleatorio(1900, 2015);
-            int month = Generador.generarNumeroAleatorio(1, 12);
-            int day = Generador.generarNumeroAleatorio(1, 31);
+            int year = Generador.generarEnteroAleatorio(1900, 2015);
+            int month = Generador.generarEnteroAleatorio(1, 12);
+            int day = Generador.generarEnteroAleatorio(1, 31);
             Date d;
             Calendar cal = GregorianCalendar.getInstance();
             cal.set( year, month, day);
             d = cal.getTime();
             return (T) d;
         } else if (type.isAssignableFrom(Fecha.class)) {
-            int year = Generador.generarNumeroAleatorio(1900, 2015);
-            int month = Generador.generarNumeroAleatorio(1, 12);
-            int day = Generador.generarNumeroAleatorio(1, 31);
+            int year = Generador.generarEnteroAleatorio(1900, 2015);
+            int month = Generador.generarEnteroAleatorio(1, 12);
+            int day = Generador.generarEnteroAleatorio(1, 31);
             Date d;
             Calendar cal = GregorianCalendar.getInstance();
             cal.set( year, month, day);
@@ -73,12 +72,68 @@ public class Utils {
             SimpleDateFormat sm = new SimpleDateFormat("dd/MM/yyyy");
             return (T) new Fecha(sm.format(d));
         } else if (type.isAssignableFrom(double.class) || (type.isAssignableFrom(Double.class))) {
-            return (T) new Double(Generador.generarNumeroAleatorio(0, 500)+"."+Generador.generarNumeroAleatorio(0, 99));
+            return (T) Generador.generarDecimalAleatorio(0,500);
         } else if (type.isAssignableFrom(float.class) || type.isAssignableFrom(Float.class)) {
-            return (T) new Float(Generador.generarNumeroAleatorio(0, 500));
+            return (T) new Float(Generador.generarEnteroAleatorio(0, 500));
         } else if (type.isAssignableFrom(int.class) || type.isAssignableFrom(Integer.class)) {
             //takeout all spaces
-            Integer integer = Generador.generarNumeroAleatorio(0, 500);
+            Integer integer = Generador.generarEnteroAleatorio(0, 500);
+            return (T) integer;
+        }
+        return null;
+        //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static <T> T getValueAccordingTypeAndMethodName(Class<T> type, String methodName) {
+        methodName = methodName.toLowerCase();
+        if (type.isAssignableFrom(String.class)) {
+            if (methodName.contains("nom") && methodName.contains("ap")){
+                return (T) String.valueOf(Generador.generarNombreAleatorio()+","+Generador.generarApellidoAleatorio());
+            } else if (methodName.contains("apellido")){
+                return (T) Generador.generarApellidoAleatorio();
+            } else if (methodName.contains("nombre")){
+                return (T) Generador.generarNombreAleatorio();
+            }  else if (methodName.contains("provincia") || methodName.contains("pcia")){
+                return (T) Generador.generarPciaAleatorio();
+            }  else if (methodName.contains("pais") || methodName.contains("country")){
+                return (T) Generador.generarPaisAleatorio();
+            }  else if (methodName.contains("localidad") || methodName.contains("loc") || methodName.contains("local")){
+                return (T) Generador.generarLocalidadAleatorio();
+            }  else if (methodName.contains("titulo") || methodName.contains("tit") || methodName.contains("materia") || methodName.contains("mat")){
+                return (T) Generador.generarPalabraConArticuloAleatoria();
+            }
+            return (T) Generador.generarPalabraSinArticuloAleatoria();
+        } else if (type.isAssignableFrom(Date.class)) {
+            int year = Generador.generarEnteroAleatorio(1900, 2015);
+            int month = Generador.generarEnteroAleatorio(1, 12);
+            int day = Generador.generarEnteroAleatorio(1, 31);
+            Date d;
+            Calendar cal = GregorianCalendar.getInstance();
+            cal.set( year, month, day);
+            d = cal.getTime();
+            return (T) d;
+        } else if (type.isAssignableFrom(Fecha.class)) {
+            int year = Generador.generarEnteroAleatorio(1900, 2015);
+            int month = Generador.generarEnteroAleatorio(1, 12);
+            int day = Generador.generarEnteroAleatorio(1, 31);
+            Date d;
+            Calendar cal = GregorianCalendar.getInstance();
+            cal.set( year, month, day);
+            d = cal.getTime();
+            SimpleDateFormat sm = new SimpleDateFormat("dd/MM/yyyy");
+            return (T) new Fecha(sm.format(d));
+        } else if (type.isAssignableFrom(double.class) || (type.isAssignableFrom(Double.class))) {
+            return (T) Generador.generarDecimalAleatorio(0,500);
+        } else if (type.isAssignableFrom(float.class) || type.isAssignableFrom(Float.class)) {
+            return (T) new Float(Generador.generarEnteroAleatorio(0, 500));
+        } else if (type.isAssignableFrom(int.class) || type.isAssignableFrom(Integer.class)) {
+            //takeout all spaces
+            Integer integer = Generador.generarEnteroAleatorio(0, 500);
+            if (methodName.contains("dni")){
+                integer = Generador.generarDNIAleatorio();
+            } else if (methodName.contains("legajo") || methodName.contains("leg")){
+                integer = Generador.generarLegajoAleatorio();
+            }
             return (T) integer;
         }
         return null;
@@ -106,7 +161,7 @@ public class Utils {
         return methodName;
     }
 
-    static void handleException(Exception ex) {
+    public static void handleException(Exception ex) {
         System.out.println(Constants.EXCEPCION_OCURRIDA_ + ex.getClass().getName()+" "+ex.getMessage());
     }
     
@@ -147,4 +202,16 @@ public class Utils {
         }
         return null;
 }
+
+    public static boolean esMenor(String someString, String provincia1) {
+        return someString.compareToIgnoreCase(provincia1) < 0;
+    }
+
+    public static boolean esMayor(String someString, String provincia1) {
+        return someString.compareToIgnoreCase(provincia1) > 0;
+    }
+
+    public static boolean esIgual(String someString, String provincia1) {
+        return someString.compareToIgnoreCase(provincia1) == 0;
+    }
 }

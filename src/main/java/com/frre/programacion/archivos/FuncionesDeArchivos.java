@@ -1,11 +1,13 @@
-package com.frre.programacion;
+package com.frre.programacion.archivos;
+
+import com.frre.programacion.Utils;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
-import static com.frre.programacion.Constants.*;
+import static com.frre.programacion.data.Constants.*;
 
 /*
  * To change this template, choose Tools | Templates

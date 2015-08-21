@@ -2,7 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.frre.programacion;
+package com.frre.programacion.archivos;
+
+import com.frre.programacion.data.Constants;
+import com.frre.programacion.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;
