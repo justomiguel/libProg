@@ -1,4 +1,4 @@
-package com.frre.test.archivos;
+package com.frre.test.archivos.algoritmos;
 
 /**
  * Created by jvargas on 8/21/15.

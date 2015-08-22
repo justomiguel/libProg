@@ -1,7 +1,7 @@
-package com.frre.test.archivos.crear;
+package com.frre.test.archivos.algoritmos.crear;
 
 import com.frre.programacion.Generador;
-import com.frre.test.archivos.Auto;
+import com.frre.test.archivos.algoritmos.Auto;
 
 import java.io.File;
 

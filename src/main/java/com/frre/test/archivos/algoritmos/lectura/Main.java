@@ -1,7 +1,6 @@
-package com.frre.test.archivos.lectura;
+package com.frre.test.archivos.algoritmos.lectura;
 
-        import com.frre.test.archivos.Alumno;
-        import com.frre.test.archivos.Auto;
+        import com.frre.test.archivos.algoritmos.Auto;
 
         import java.io.File;
 

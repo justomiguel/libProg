@@ -1,9 +1,9 @@
-package com.frre.test.archivos.mezcla;
+package com.frre.test.archivos.algoritmos.mezcla;
 
 import com.frre.programacion.Generador;
 import com.frre.programacion.Utils;
 import com.frre.programacion.archivos.GeneradorArchivos;
-import com.frre.test.archivos.Empleado;
+import com.frre.test.archivos.algoritmos.Empleado;
 
 import java.io.File;
 
