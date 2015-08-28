@@ -1,10 +1,13 @@
 package com.frre.test.archivos.algoritmos;
 
+import com.frre.programacion.Clave;
+
 /**
  * Created by jvargas on 8/21/15.
  */
 public class Auto {
 
+    @Clave
     String localidad;
     String patente;
     String propietario;

@@ -1,6 +1,7 @@
-package com.frre.test.archivos.algoritmos.corte;
+package com.frre.test.archivos.algoritmos.indexados;
 
 import com.frre.programacion.archivos.GeneradorArchivos;
+import com.frre.test.archivos.algoritmos.Bono;
 import com.frre.test.archivos.algoritmos.Empleado;
 
 import java.io.File;
@@ -29,6 +30,10 @@ public class Main {
     //archivo
     private static File archivo;
 
+    //bonos
+    private static Bono bonos;
+    private static File archivoIndexado;
+
 
     //algoritmo
     public static void main(String[] args){
@@ -36,9 +41,16 @@ public class Main {
         //aqui creamos un archivo
         registro = new Empleado();
 
+        bonos = new Bono();
+
         GeneradorArchivos.generarArchivo("empleados", registro, 2000);
+
+        GeneradorArchivos.generarArchivo("consumos", bonos, 2000);
+
         //con mi archivo creado cmoienzo a utilizarlo
         archivo = abrir("empleados");
+        archivoIndexado = abrir("consumos");
+
         registro = leer(archivo, registro);
 
         //resguardo de variables y seteo de acumuladores
@@ -58,7 +70,17 @@ public class Main {
             } else if (!resguardoSucursal.equalsIgnoreCase(registro.getLocalidad())){
                 corteSucursal();
             }
-            acumSucursal += registro.getSueldo();
+
+            //cargo mi indexado
+            bonos = new Bono();
+            bonos.setProvincia(registro.getProvincia());
+            bonos = leerIndexado(archivoIndexado, bonos);
+
+            double acum = 0;
+            if (bonos!=null){
+                acum = bonos.getBono();
+            }
+            acumSucursal += registro.getSueldo() + acum;
             registro = leer(archivo, registro);
         }
         corteProvincia();

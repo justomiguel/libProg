@@ -1,13 +1,19 @@
 package com.frre.test.archivos.algoritmos;
 
+import com.frre.programacion.Clave;
+
 /**
  * Created by jvargas on 8/20/15.
  */
 public class Alumno {
 
 
+    @Clave
     int legajo;
+
+    @Clave
     String nomYApell;
+
     int dni;
     double promedio;
 

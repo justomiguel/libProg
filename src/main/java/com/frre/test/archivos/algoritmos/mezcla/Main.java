@@ -35,8 +35,8 @@ public class Main {
         registroPersonal = new Empleado();
         registroPersonalExterno = new Empleado();
 
-        GeneradorArchivos.generarArchivo("personal", registroPersonal, Generador.generarEnteroAleatorio(100,1000), 2);
-        GeneradorArchivos.generarArchivo("personalExterno", registroPersonalExterno, Generador.generarEnteroAleatorio(100,1000), 2);
+        GeneradorArchivos.generarArchivo("personal", registroPersonal, Generador.generarEnteroAleatorio(100,1000));
+        GeneradorArchivos.generarArchivo("personalExterno", registroPersonalExterno, Generador.generarEnteroAleatorio(100,1000));
 
         //con mi archivoPersonal creado cmoienzo a utilizarlo
         archivoPersonal = abrir("personal");
@@ -48,28 +48,28 @@ public class Main {
         registroPersonalExterno = leer(archivoPersonalExterno, registroPersonalExterno);
 
         while (!FDA(archivoPersonal) && !FDA(archivoPersonalExterno)){
-            if (Utils.esMenor(registroPersonal.getProvincia(), registroPersonalExterno.getProvincia())){
+            if (Utils.esMenor(registroPersonal, registroPersonalExterno)){
                 grabar(archivoFinal, registroPersonal);
-                leer(archivoPersonal, registroPersonal);
-            } else if (Utils.esMayor(registroPersonal.getProvincia(), registroPersonalExterno.getProvincia())){
+                registroPersonal = leer(archivoPersonal, registroPersonal);
+            } else if (Utils.esMayor(registroPersonal, registroPersonalExterno)){
                 grabar(archivoFinal, registroPersonalExterno);
-                leer(archivoPersonalExterno, registroPersonalExterno);
+                registroPersonalExterno = leer(archivoPersonalExterno, registroPersonalExterno);
             }  else {
                 grabar(archivoFinal, registroPersonalExterno);
                 grabar(archivoFinal, registroPersonal);
-                leer(archivoPersonalExterno, registroPersonalExterno);
-                leer(archivoPersonal, registroPersonal);
+                registroPersonalExterno = leer(archivoPersonalExterno, registroPersonalExterno);
+                registroPersonal = leer(archivoPersonal, registroPersonal);
             }
         }
 
         while (!FDA(archivoPersonal)){
             grabar(archivoFinal, registroPersonal);
-            leer(archivoPersonal, registroPersonal);
+            registroPersonal = leer(archivoPersonal, registroPersonal);
         }
 
         while (!FDA(archivoPersonalExterno)){
             grabar(archivoFinal, registroPersonalExterno);
-            leer(archivoPersonalExterno, registroPersonalExterno);
+            registroPersonalExterno = leer(archivoPersonalExterno, registroPersonalExterno);
         }
 
         cerrar(archivoPersonalExterno);

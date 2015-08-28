@@ -1,12 +1,17 @@
 package com.frre.test.archivos.algoritmos;
 
+import com.frre.programacion.Clave;
+
 /**
  * Created by jvargas on 8/20/15.
  */
 public class Empleado {
 
+    @Clave
     private String provincia;
+    @Clave
     private String localidad;
+    @Clave
     private int dni;
     private String nomYAp;
     private double sueldo;

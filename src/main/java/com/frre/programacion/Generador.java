@@ -61,7 +61,18 @@ public class Generador {
         String[] split = appelidos.split(Constants.NEW_LINE);
         return split[generarEnteroAleatorio(0, split.length - 1)].trim();
     }
-    
+
+    public static String generarPatenteALeatoria(){
+       StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < 3; i++) {
+            int resultado=(int)(Math.random()*26+65);//Sumamos al numero de letras (sin ñ) el valor en ASCII
+            char letra = (char)resultado;
+            builder.append(letra);
+        }
+        builder.append(Generador.generarEnteroAleatorio(100,999));
+        return builder.toString();
+    }
+
      public static String generarPciaAleatorio(){
         String appelidos = DataSource.pcias;
         String[] split = appelidos.split(Constants.NEW_LINE);

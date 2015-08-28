@@ -80,6 +80,7 @@ public class FuncionesDeArchivos {
     public static <T> void grabar(File archS, T reg) {
         EscritorDeArchivos l = myWrittenArchs.get(archS);
         if (l != null) {
+            l.setRegistro(reg);
             l.recordToFile(reg);
         } else {
             System.out.println(NO_SE_PUEDE_GRABAR_EN_UN_ARCHIVO_NO_CREAD);
@@ -90,6 +91,15 @@ public class FuncionesDeArchivos {
         LectorArchivos l = myArchs.get(archivo);
         if (l != null) {
             registro = (T) l.getNextRecord(registro);
+            return registro;
+        }
+        return null;
+    }
+
+    public static <T> T leerIndexado(File archivo, T registro) {
+        LectorArchivos l = myArchs.get(archivo);
+        if (l != null) {
+            registro = (T) l.getNextRecordIndexed(registro);
             return registro;
         }
         return null;
@@ -112,7 +122,7 @@ public class FuncionesDeArchivos {
             } else {
                 EscritorDeArchivos tle = myWrittenArchs.get(archivo);
                 if (tle != null) {
-                    tle.writeIntoFileContents();
+                    tle.writeIntoFileContents(tle.getRegistro());
                     myWrittenArchs.remove(archivo);
                 } else {
                     System.out.println(ARCHIVO_YA_CERRADO);

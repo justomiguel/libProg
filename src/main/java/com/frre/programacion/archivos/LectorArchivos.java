@@ -4,6 +4,7 @@
  */
 package com.frre.programacion.archivos;
 
+import com.frre.programacion.Clave;
 import com.frre.programacion.data.Constants;
 import com.frre.programacion.Utils;
 
@@ -25,6 +26,7 @@ public class LectorArchivos<T> {
     private int currentCounter;
     private ArrayList<String> lines;
     private ArrayList<Object> theContents;
+    private Object registro;
 
     public LectorArchivos(File myFile, String name) {
         this.myFile = myFile;
@@ -32,6 +34,9 @@ public class LectorArchivos<T> {
     }
 
     public <T> void getContents(T registro) {
+
+        this.registro = registro;
+
         theContents = (ArrayList<Object>) new ArrayList<T>();
         try {
             //use buffering, reading one line at a time
@@ -70,9 +75,11 @@ public class LectorArchivos<T> {
 
     }
 
-   
+    public Object getRegistro() {
+        return registro;
+    }
 
-   public <T> T getNextRecord(T registro) {
+    public <T> T getNextRecord(T registro) {
 
         if (currentCounter == 0) {
             getContents(registro);
@@ -94,5 +101,29 @@ public class LectorArchivos<T> {
 
     void dispose() {
         throw new UnsupportedOperationException(Constants.NOT_SUPPORTED); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public <T> T getNextRecordIndexed(T registro) {
+        getContents(registro);
+        try {
+            for (Object object : theContents){
+                for (Field f : object.getClass().getDeclaredFields()) {
+                    Method method = object.getClass().getDeclaredMethod(Utils.getGetMethod(f.getName()));
+                    Object value = method.invoke(object);
+
+                    //en el host
+                    Method method2 = registro.getClass().getDeclaredMethod(Utils.getGetMethod(f.getName()));
+                    Object value2 = method.invoke(registro);
+                    if (f.getAnnotation(Clave.class)!=null){
+                        if (value.equals(value2)){
+                            return (T) object;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e){
+
+        }
+        return null;
     }
 }

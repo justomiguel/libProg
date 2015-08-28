@@ -5,6 +5,8 @@
 package com.frre.programacion;
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -96,6 +98,8 @@ public class Utils {
             }  else if (methodName.contains("provincia") || methodName.contains("pcia")){
                 return (T) Generador.generarPciaAleatorio();
             }  else if (methodName.contains("pais") || methodName.contains("country")){
+                return (T) Generador.generarPaisAleatorio();
+            }   else if (methodName.contains("patente") || methodName.contains("pat")){
                 return (T) Generador.generarPaisAleatorio();
             }  else if (methodName.contains("localidad") || methodName.contains("loc") || methodName.contains("local")){
                 return (T) Generador.generarLocalidadAleatorio();
@@ -203,15 +207,45 @@ public class Utils {
         return null;
 }
 
-    public static boolean esMenor(String someString, String provincia1) {
-        return someString.compareToIgnoreCase(provincia1) < 0;
+    public static boolean esMenor(Object obj1, Object obj2) {
+        return  compareTo(obj1, obj2) < 0;
     }
 
-    public static boolean esMayor(String someString, String provincia1) {
-        return someString.compareToIgnoreCase(provincia1) > 0;
+    private static int compareTo(Object obj1, Object obj2) {
+        try {
+            Object localReg = (Object) obj1.getClass().newInstance();
+            int currentFieldNumber = 0;
+            int claves = 0;
+            for (Field f : obj1.getClass().getDeclaredFields()) {
+                if (f.getAnnotation(Clave.class)!=null){
+                    claves+=1;
+                }
+            }
+
+            Field[] campos = obj1.getClass().getDeclaredFields();
+            for (int i = 0; i < claves; i++) {
+                Field f = campos[i];
+                Method method = obj1.getClass().getDeclaredMethod(Utils.getGetMethod(f.getName()));
+                Method method2 = obj2.getClass().getDeclaredMethod(Utils.getGetMethod(f.getName()));
+                Comparable comparable = (Comparable) method.invoke(obj1);
+                Comparable comparable2 = (Comparable) method2.invoke(obj2);
+                int comparation = comparable.compareTo(comparable2);
+                if (comparation != 0) {
+                    return comparation;
+                }
+            }
+            return 0;
+        } catch (Exception e) {
+
+        }
+        return 0;
+    }
+
+    public static boolean esMayor(Object someString, Object provincia1) {
+        return compareTo(someString, provincia1) > 0;
     }
 
     public static boolean esIgual(String someString, String provincia1) {
-        return someString.compareToIgnoreCase(provincia1) == 0;
+        return compareTo(someString, provincia1) == 0;
     }
 }

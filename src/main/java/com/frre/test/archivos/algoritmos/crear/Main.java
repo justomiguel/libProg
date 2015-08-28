@@ -27,7 +27,7 @@ public class Main {
         for (int i = 0; i < 500; i++) {
             nuevoAuto = new Auto();
             nuevoAuto.setLocalidad(Generador.generarLocalidadAleatorio());
-            nuevoAuto.setPatente(Generador.generarPalabraSinArticuloAleatoria());
+            nuevoAuto.setPatente(Generador.generarPatenteALeatoria());
             String nombre = Generador.generarNombreAleatorio()+","+Generador.generarApellidoAleatorio();
             nuevoAuto.setPropietario(nombre);
             nuevoAuto.setModelo(Generador.generarEnteroAleatorio(1987, 2015));
