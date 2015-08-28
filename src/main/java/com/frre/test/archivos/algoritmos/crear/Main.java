@@ -2,6 +2,8 @@ package com.frre.test.archivos.algoritmos.crear;
 
 import com.frre.programacion.Generador;
 import com.frre.test.archivos.algoritmos.Auto;
+import com.frre.test.archivos.algoritmos.Cliente;
+import com.frre.test.archivos.algoritmos.Usuario;
 
 import java.io.File;
 
@@ -16,23 +18,22 @@ public class Main {
     //archivo
     private static File archivo;
     //registro
-    private static Auto nuevoAuto;
+    private static Usuario nuevoUsuario;
 
     //algoritmo
     public static void main(String[] args){
         //muestra de funciones con archivos
         //aqui creamos un archivo
-        archivo = abrir("autosProvinciales", true);
+        archivo = abrir("usuarios", true);
         //agregamos 500 registros;
         for (int i = 0; i < 500; i++) {
-            nuevoAuto = new Auto();
-            nuevoAuto.setLocalidad(Generador.generarLocalidadAleatorio());
-            nuevoAuto.setPatente(Generador.generarPatenteALeatoria());
-            String nombre = Generador.generarNombreAleatorio()+","+Generador.generarApellidoAleatorio();
-            nuevoAuto.setPropietario(nombre);
-            nuevoAuto.setModelo(Generador.generarEnteroAleatorio(1987, 2015));
+            nuevoUsuario = new Usuario();
+            nuevoUsuario.setNombre(Generador.generarNombreAleatorio());
+            nuevoUsuario.setDni(Generador.generarDNIAleatorio());
+            nuevoUsuario.setDomicilio(Generador.generarLocalidadAleatorio());
+            nuevoUsuario.setEdad(Generador.generarEnteroAleatorio(15, 99));
 
-            grabar(archivo, nuevoAuto);
+            grabar(archivo, nuevoUsuario);
         }
 
         cerrar(archivo);

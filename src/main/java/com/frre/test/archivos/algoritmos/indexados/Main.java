@@ -115,6 +115,7 @@ public class Main {
     }
 
     private static void totalGeneral() {
+
         System.out.println("El sueldo total del pais es "+ acumTotal);
     }
 }
