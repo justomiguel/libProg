@@ -2,55 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4721319-785d-4639-8da2-cf085d27b08c" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/Clave.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/Clave.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/Fecha.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/Fecha.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/Generador.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/Generador.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/IBinaryTree.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/IBinaryTree.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/Ordenar.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/Ordenar.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/Utils.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/Utils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/archivos/EscritorDeArchivos.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/archivos/EscritorDeArchivos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/archivos/FuncionesDeArchivos.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/archivos/FuncionesDeArchivos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/archivos/GeneradorArchivos.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/archivos/GeneradorArchivos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/archivos/LectorArchivos.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/archivos/LectorArchivos.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/archivos/OcurrenceLimiter.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/archivos/OcurrenceLimiter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/data/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/data/Constants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/programacion/data/DataSource.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/library/data/DataSource.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/Alumno.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/Alumno.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/Auto.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/Auto.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/Bono.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/Bono.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/Cliente.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/Cliente.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/Empleado.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/Empleado.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/Usuario.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/Usuario.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/corte/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/corte/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/crear/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/crear/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/indexados/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/indexados/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/lectura/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/lectura/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/algoritmos/mezcla/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/isi/algoritmos/mezcla/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/Persona.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/Persona.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/RegistrationSystem.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/RegistrationSystem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/MainExceptions.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/MainExceptions.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/db/ConcreteDB.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/db/ConcreteDB.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/db/DBHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/db/DBHelper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/db/Database.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/db/Database.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/exceptions/NoCustomerOrShopsException.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/exceptions/NoCustomerOrShopsException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/exceptions/ZeroComprasException.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/exceptions/ZeroComprasException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/model/Compra.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/model/Compra.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/model/Customer.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/exceptions/model/Customer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/files/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/files/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/hilos/Comprable.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/hilos/Comprable.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/hilos/DataStore.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/hilos/DataStore.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/hilos/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/hilos/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/hilos/ProcesoCompra.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/hilos/ProcesoCompra.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/hilos/ProcesoLargo.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/labii/hilos/ProcesoLargo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/Nodo.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/Nodo.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/arboles/MainArboles.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/arboles/MainArboles.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/arboles/NodoArbol.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/arboles/NodoArbol.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/ejerciciolistas/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/ejerciciolistas/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/ejerciciolistas/MiLista.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/ejerciciolistas/MiLista.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/programacionii/ejerciciolistas/Nodo.java" afterPath="$PROJECT_DIR$/src/main/java/com/frre/practica/tsp/programacionii/ejerciciolistas/Nodo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="libProg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,7 +24,24 @@
     <favorites_list name="libProg" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+            <state split_layout="FIRST">
+              <first_editor vertical-scroll-proportion="0.2">
+                <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+          <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -94,7 +63,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/mezcla/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/Auto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/crear/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/lectura/Main.java" />
@@ -145,6 +113,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/exceptions/NoCustomerOrShopsException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/MainExceptions.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/frre/test/archivos/labii/exceptions/db/DBHelper.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -161,10 +130,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
+    <option name="x" value="1665" />
     <option name="y" value="-4" />
-    <option name="width" value="1535" />
-    <option name="height" value="904" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -251,40 +220,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="practica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libProg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libProg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frre" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="practica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="algoritmos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -824,19 +759,19 @@
       <workItem from="1442273150085" duration="247000" />
       <workItem from="1442617280678" duration="1444000" />
       <workItem from="1443825231823" duration="5648000" />
-      <workItem from="1461936156192" duration="346000" />
+      <workItem from="1461936156192" duration="1020000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60378000" />
+    <option name="totallyTimeSpent" value="61052000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1535" height="904" extended-state="6" />
-    <editor active="false" />
+    <frame x="1665" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2912052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24097034" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -1325,6 +1260,20 @@
           <caret line="47" column="52" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor vertical-scroll-proportion="0.2">
+            <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MultiMarkdownFxPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>
