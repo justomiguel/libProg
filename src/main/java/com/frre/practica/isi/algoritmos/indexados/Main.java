@@ -3,6 +3,7 @@ package com.frre.practica.isi.algoritmos.indexados;
 import com.frre.library.archivos.GeneradorArchivos;
 import com.frre.practica.isi.algoritmos.Bono;
 import com.frre.practica.isi.algoritmos.Empleado;
+import static com.frre.library.archivos.FuncionesDeArchivos.*;
 
 import java.io.File;
 

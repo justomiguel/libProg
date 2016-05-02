@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import static com.frre.library.data.Constants.*;
 
 /*
  * To change this template, choose Tools | Templates

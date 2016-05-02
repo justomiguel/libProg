@@ -2,6 +2,7 @@ package com.frre.practica.isi.algoritmos.corte;
 
 import com.frre.practica.isi.algoritmos.Empleado;
 import com.frre.library.archivos.GeneradorArchivos;
+import static com.frre.library.archivos.FuncionesDeArchivos.*;
 
 import java.io.File;
 

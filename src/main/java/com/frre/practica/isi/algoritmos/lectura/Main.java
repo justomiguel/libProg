@@ -1,6 +1,7 @@
 package com.frre.practica.isi.algoritmos.lectura;
 
         import com.frre.practica.isi.algoritmos.Cliente;
+        import static com.frre.library.archivos.FuncionesDeArchivos.*;
 
         import java.io.File;
 

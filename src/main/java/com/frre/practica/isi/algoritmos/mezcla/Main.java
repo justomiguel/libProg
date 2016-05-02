@@ -7,7 +7,7 @@ import com.frre.library.archivos.GeneradorArchivos;
 
 import java.io.File;
 
-import static com.frre.library.archivos.FuncionesDeArchivos.FDA;
+import static com.frre.library.archivos.FuncionesDeArchivos.*;
 
 /**
  * Created by jvargas on 8/21/15.
