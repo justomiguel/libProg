@@ -12,6 +12,8 @@ LibProg es una libreria espcialmente construida para la catedra de Programacion 
 
 3. Descargarse Maven (Seguir los pasos de la pagina y despues por consola hacer), de esa forma les bajara las dependencias, esto es opcional ya que la ide trae maven por defecto pero seria bueno que lo hagan
 
+        https://maven.apache.org/install.html
+    
         mvn clean install
     
 4. Pueden usar la libreria con una IDE de preferencia o bien usar INTELLIJ IDEA desde aqui! Bajense el community! Un abrazo!
