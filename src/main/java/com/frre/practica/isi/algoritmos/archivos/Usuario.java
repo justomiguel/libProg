@@ -1,4 +1,4 @@
-package com.frre.practica.isi.algoritmos;
+package com.frre.practica.isi.algoritmos.archivos;
 
 import com.frre.library.Clave;
 

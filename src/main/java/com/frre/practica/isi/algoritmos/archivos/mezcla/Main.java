@@ -1,6 +1,6 @@
-package com.frre.practica.isi.algoritmos.mezcla;
+package com.frre.practica.isi.algoritmos.archivos.mezcla;
 
-import com.frre.practica.isi.algoritmos.Empleado;
+import com.frre.practica.isi.algoritmos.archivos.Empleado;
 import com.frre.library.Generador;
 import com.frre.library.Utils;
 import com.frre.library.archivos.GeneradorArchivos;

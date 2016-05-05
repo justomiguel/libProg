@@ -1,0 +1,21 @@
+Accion Prueba es;
+
+    Ambiente
+        nombre: AlfaNumerico;
+        apellido: AlfaNumerico;
+
+    Algoritmo
+
+        Escribir("Ingrese nombre");
+        Leer(nombre);
+        Escribir("Ingrese apellido");
+        Leer(apellido);
+        Si(apellido = "Vargas" and nombre == "Migue" or nombre == "Martin")entonces;
+             Escribir("Grande ",apellido," ",nombre);
+        sino
+            Escribir("La cagamos")
+        Fin_si
+
+    Fin_Algoritmo
+
+Fin_Accion;

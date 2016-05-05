@@ -1,0 +1,19 @@
+Accion Prueba es;
+
+    Ambiente
+        numero:entero;
+
+    Algoritmo
+
+        Escribir("Comenzando");
+        numero = 0;
+        Repetir
+            numero := numero +1;
+            Si(numero mod 2 == 0)entonces
+                Escribir(numero)
+            Fin_si
+        Hasta(numero < 100);
+
+    Fin_Algoritmo
+
+Fin_Accion;

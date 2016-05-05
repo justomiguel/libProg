@@ -1,6 +1,6 @@
-package com.frre.practica.isi.algoritmos.crear;
+package com.frre.practica.isi.algoritmos.archivos.crear;
 
-import com.frre.practica.isi.algoritmos.Usuario;
+import com.frre.practica.isi.algoritmos.archivos.Usuario;
 import com.frre.library.Generador;
 import static com.frre.library.archivos.FuncionesDeArchivos.*;
 

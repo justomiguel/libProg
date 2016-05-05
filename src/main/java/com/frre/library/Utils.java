@@ -248,4 +248,16 @@ public class Utils {
     public static boolean esIgual(String someString, String provincia1) {
         return compareTo(someString, provincia1) == 0;
     }
+
+    public static String getType(String type) {
+        if (type.equalsIgnoreCase("Alfanumerico") || type.equalsIgnoreCase("cadena") || type.equalsIgnoreCase("char")|| type.equalsIgnoreCase("caracter") ){
+            return "String";
+        } else if (type.equalsIgnoreCase("entero")){
+            return "int";
+        } else if (type.equalsIgnoreCase("real")){
+            return "double";
+        } else {
+            return "boolean";
+        }
+    }
 }
