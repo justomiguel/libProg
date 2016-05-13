@@ -6,10 +6,10 @@ import java.util.Date;
 /**
  * Created by jvargas on 8/21/15.
  */
-public class Persona {
+public class Persona  {
 
     private String nombre;
-    private int legajo;
+    private Integer legajo;
     private String[] sobreNombres;
 
     public Persona(String nombre, int legajo, String[] sobreNombres) {
@@ -50,6 +50,5 @@ public class Persona {
     public void setLegajo(int legajo) {
         this.legajo = legajo;
     }
-
 
 }
