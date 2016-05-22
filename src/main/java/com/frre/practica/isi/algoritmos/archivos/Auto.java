@@ -8,10 +8,10 @@ import com.frre.library.Clave;
 public class Auto {
 
     @Clave
-    String localidad;
-    String patente;
-    String propietario;
-    int modelo;
+    private String localidad;
+    private String patente;
+    private String propietario;
+    private int modelo;
 
     @Override
     public String toString() {
