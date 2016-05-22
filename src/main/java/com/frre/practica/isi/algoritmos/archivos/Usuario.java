@@ -8,11 +8,11 @@ import com.frre.library.Clave;
 public class Usuario {
 
     @Clave
-    String domicilio;
+    private String domicilio;
     @Clave
-    int dni;
-    String nombre;
-    int edad;
+    private int dni;
+    private String nombre;
+    private int edad;
 
 
     public int getDni() {

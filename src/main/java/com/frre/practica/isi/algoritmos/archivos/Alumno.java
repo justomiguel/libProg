@@ -9,13 +9,13 @@ public class Alumno {
 
 
     @Clave
-    int legajo;
+    private int legajo;
 
     @Clave
-    String nomYApell;
+    private String nomYApell;
 
-    int dni;
-    double promedio;
+    private int dni;
+    private double promedio;
 
     public int getLegajo() {
         return legajo;

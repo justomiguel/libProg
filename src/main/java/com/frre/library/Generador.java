@@ -15,7 +15,7 @@ import java.util.Random;
  */
 public class Generador {
     
-    static Random rnd = new Random();
+    private static Random rnd = new Random();
     
     public static String generarApellidoAleatorio(){
         String appelidos = DataSource.apellidos;
