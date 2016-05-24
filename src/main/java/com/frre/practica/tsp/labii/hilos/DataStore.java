@@ -5,7 +5,7 @@ package com.frre.practica.tsp.labii.hilos;
  */
 public class DataStore {
 
-    private String productName;
+    private final String productName;
     private int cantProductos;
 
     public DataStore(String productName, int cantProductos) {

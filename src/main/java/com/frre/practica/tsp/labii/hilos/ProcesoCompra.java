@@ -10,7 +10,7 @@ public class ProcesoCompra implements Comprable, Runnable{
     private String nombreProducto;
     private boolean exito;
     private int cantComprada;
-    private DataStore dataStore;
+    private final DataStore dataStore;
 
     public ProcesoCompra(DataStore dataStore) {
         this.dataStore = dataStore;

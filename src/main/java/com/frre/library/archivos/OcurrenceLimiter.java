@@ -7,9 +7,9 @@ import java.util.ArrayList;
  */
 public class OcurrenceLimiter {
 
-    private Class<?> type;
-    private int size;
-    private ArrayList<Object> listaValores;
+    private final Class<?> type;
+    private final int size;
+    private final ArrayList<Object> listaValores;
 
     public OcurrenceLimiter(int size, Class<?> type) {
         this.size = size;
