@@ -49,7 +49,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "Empleado{" +
                 "dni=" + dni +
                 ", nombre='" + nombre + '\'' +
                 ", edad=" + edad +

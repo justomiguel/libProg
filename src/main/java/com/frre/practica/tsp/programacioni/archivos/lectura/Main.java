@@ -1,8 +1,5 @@
 package com.frre.practica.tsp.programacioni.archivos.lectura;
 
-import com.frre.practica.tsp.programacioni.archivos.Cliente;
-import com.frre.practica.tsp.programacioni.archivos.Usuario;
-
 import java.io.File;
 
 import static com.frre.library.archivos.FuncionesDeArchivos.*;

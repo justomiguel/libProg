@@ -1,7 +1,8 @@
 package com.frre.practica.tsp.programacioni.archivos.crear;
 
 import static com.frre.library.Generador.*;
-import com.frre.practica.tsp.programacioni.archivos.Usuario;
+
+import com.frre.practica.tsp.programacioni.archivos.Empleado;
 
 import java.io.File;
 
@@ -17,7 +18,7 @@ public class Main {
     //archivo
     private static File archivo;
     //registro
-    private static Usuario nuevoUsuario;
+    private static Empleado nuevoUsuario;
 
     //algoritmo
     public static void main(String[] args){
@@ -25,13 +26,15 @@ public class Main {
         //aqui creamos un archivo
         archivo = abrir("Musimundo", true);
         //agregamos 500 registros;
+
         for (int i = 0; i < 500; i++) {
-            nuevoUsuario = new Usuario();
+            nuevoUsuario = new Empleado();
             nuevoUsuario.setNombre(generarNombreAleatorio());
             nuevoUsuario.setDni(generarDNIAleatorio());
-            nuevoUsuario.setDomicilio(generarLocalidadAleatorio());
+            nuevoUsuario.setZona(generarEnteroAleatorio(0,10));
             nuevoUsuario.setEdad(generarEnteroAleatorio(15, 99));
-
+            nuevoUsuario.setSucursal(generarEnteroAleatorio(0,15));
+            nuevoUsuario.setSueldo(generarDecimalAleatorio(1,10));
             grabar(archivo, nuevoUsuario);
         }
 

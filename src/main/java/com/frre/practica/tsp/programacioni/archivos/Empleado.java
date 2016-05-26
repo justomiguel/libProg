@@ -3,41 +3,24 @@ package com.frre.practica.tsp.programacioni.archivos;
 import com.frre.library.Clave;
 
 /**
- * Created by jvargas on 8/20/15.
+ * Created by jvargas on 8/28/15.
  */
 public class Empleado {
 
-    @Clave
-    private String provincia;
-    @Clave
-    private String localidad;
-    @Clave
+
+    private int sucursal;
+    private int zona;
     private int dni;
-    private String nomYAp;
+    private String nombre;
+    private int edad;
     private double sueldo;
 
-    public String getProvincia() {
-        return provincia;
+    public double getSueldo() {
+        return sueldo;
     }
 
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
-
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-
-    public String getNomYAp() {
-        return nomYAp;
-    }
-
-    public void setNomYAp(String nomYAp) {
-        this.nomYAp = nomYAp;
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
     }
 
     public int getDni() {
@@ -48,21 +31,36 @@ public class Empleado {
         this.dni = dni;
     }
 
-    public double getSueldo() {
-        return sueldo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setSueldo(double sueldo) {
-        this.sueldo = sueldo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return "Empleado{" +
-                "localidad='" + localidad + '\'' +
-                ", nomYAp='" + nomYAp + '\'' +
-                ", dni=" + dni +
-                ", sueldo=" + sueldo +
-                '}';
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public int getZona() {
+        return zona;
+    }
+
+    public void setZona(int zona) {
+        this.zona = zona;
+    }
+
+    public int getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(int sucursal) {
+        this.sucursal = sucursal;
     }
 }
+
