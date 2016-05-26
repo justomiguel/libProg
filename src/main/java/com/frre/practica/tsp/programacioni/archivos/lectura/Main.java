@@ -14,8 +14,8 @@ public class Main {
 
     public static void main(String[] args){
         //muestra de funciones con archivos
-        File archivo = abrir("usuarios");
-        Usuario pp = new Usuario();
+        File archivo = abrir("/home/justo/Desktop/JuanSegundo");
+        Almuerzo pp = new Almuerzo();
         pp = leer(archivo, pp);
         while (!FDA(archivo)){
             System.out.println(pp);
