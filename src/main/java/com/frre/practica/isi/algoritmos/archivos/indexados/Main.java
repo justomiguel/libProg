@@ -15,16 +15,16 @@ public class Main {
     //ambiente
 
     //acumuladores
-    static String resguardoSucursal;
-    static String resguardoPcia;
+    private static String resguardoSucursal;
+    private static String resguardoPcia;
 
     //registros
-    static Empleado registro;
+    private static Empleado registro;
 
     //acums
-    static double acumSucursal;
-    static double acumTotal;
-    static double acumPcia;
+    private static double acumSucursal;
+    private static double acumTotal;
+    private static double acumPcia;
 
     //archivo
     private static File archivo;

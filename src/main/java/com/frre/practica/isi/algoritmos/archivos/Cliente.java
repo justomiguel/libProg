@@ -10,10 +10,10 @@ public class Cliente {
 
 
     @Clave
-    int legajo;
-    String nombre;
-    Fecha fecha;
-    double importe;
+    private int legajo;
+    private String nombre;
+    private Fecha fecha;
+    private double importe;
 
     @Override
     public String toString() {

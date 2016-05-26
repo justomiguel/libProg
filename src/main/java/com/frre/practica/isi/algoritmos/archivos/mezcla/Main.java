@@ -18,8 +18,8 @@ public class Main {
     //ambiente
 
     //registros
-    static Empleado registroPersonal;
-    static Empleado registroPersonalExterno;
+    private static Empleado registroPersonal;
+    private static Empleado registroPersonalExterno;
 
     //archivoPersonal
     private static File archivoPersonal;
