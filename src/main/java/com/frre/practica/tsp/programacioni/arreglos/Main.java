@@ -17,35 +17,16 @@ public class Main {
         //Se crea un arreglo de Personas
         Persona[] personas = new Persona[SIZE];
 
-        for (int i = 0; i < SIZE; i++) {
-            //creo el arreglo de sobreNombres
-            int sizeSobreNombres = Generador.generarEnteroAleatorio(0,10);
-            String[] arregloDeSobreNombres = new String[sizeSobreNombres];
 
+            int sizeSobreNombres = Generador.generarEnteroAleatorio(0,100);
             //cargo el arreglo
             for (int j = 0; j < sizeSobreNombres; j++) {
-                arregloDeSobreNombres[j] = Generador.generarPalabraSinArticuloAleatoria();
+                 System.out.print(Generador.generarPalabraSinArticuloAleatoria());
+                int blancos = Generador.generarEnteroAleatorio(0,15);
+                for (int i = 0; i < blancos; i++) {
+                    System.out.print(" ");
+                }
             }
-
-            //creo la persona
-            Persona persona = new Persona(Generador.generarNombreAleatorio(), Generador.generarLegajoAleatorio(), arregloDeSobreNombres);
-            personas[i] = persona;
-
-        }
-
-        //recorro el arreglo original y lo muestro
-        for (Persona persona : personas) {
-            System.out.println(persona);
-        }
-
-        System.out.println("------------");
-
-        ComparadorPersonas ayudante = new ComparadorPersonas();
-        Arrays.sort(personas, ayudante);
-
-        for (Persona persona : personas) {
-            System.out.println(persona);
-        }
 
 
     }
