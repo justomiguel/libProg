@@ -9,7 +9,7 @@ public class ZeroComprasException extends Exception {
 
     private static final String MESSAGE = "El usuario posee una compra de valor 0";
 
-    private Compra compra;
+    private final Compra compra;
 
     public ZeroComprasException(Compra compra) {
         super(MESSAGE);

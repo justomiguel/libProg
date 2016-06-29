@@ -22,8 +22,8 @@ import java.util.*;
 public class EscritorDeArchivos {
 
 
-    private File myFile;
-    private ArrayList<String> lines;
+    private final File myFile;
+    private final ArrayList<String> lines;
     private Object registro;
 
     public Object getRegistro() {

@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class LectorArchivos<T> {
    
 
-    private File myFile;
+    private final File myFile;
     private int currentCounter;
     private ArrayList<String> lines;
     private ArrayList<Object> theContents;
