@@ -19,7 +19,7 @@ import java.util.Scanner;
 /**
  * Created by justo on 04/05/16.
  */
-public class Main {
+public final class Main {
 
     public static final String AMBIENTE = "Ambiente";
     public static final String ALGORITMO = "Algoritmo";
@@ -42,6 +42,10 @@ public class Main {
 
 
     public static HashMap<String, String> theVariables = new HashMap<String, String>();
+
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args) throws IOException {
         FileInputStream inputStream = null;

@@ -6,7 +6,11 @@ import java.util.Scanner;
 /**
  * Created by jvargas on 8/21/15.
  */
-public class RegistrationSystem {
+public final class RegistrationSystem {
+
+    private RegistrationSystem() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);

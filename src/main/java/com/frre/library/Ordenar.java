@@ -11,7 +11,11 @@ import org.apache.commons.lang3.ArrayUtils;
  *
  * @author justomiguel
  */
-public class Ordenar {
+public final class Ordenar {
+
+    private Ordenar() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static <T> T[] intercambio(T[] vector, boolean direction) {
         for (int i = 1; i < vector.length; i++) {

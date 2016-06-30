@@ -15,7 +15,11 @@ import java.util.HashMap;
 /**
  * Created by jvargas on 8/20/15.
  */
-public class GeneradorArchivos {
+public final class GeneradorArchivos {
+
+    private GeneradorArchivos() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static <T> void generarArchivo(String nombreArchivo, T registro, int cantRegistros) {
         try{

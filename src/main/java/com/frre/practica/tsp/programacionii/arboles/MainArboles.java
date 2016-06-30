@@ -3,7 +3,11 @@ package com.frre.practica.tsp.programacionii.arboles;
 /**
  * Created by jvargas on 8/28/15.
  */
-public class MainArboles {
+public final class MainArboles {
+
+    private MainArboles() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args){
         NodoArbol<Integer> nodo4 = new NodoArbol<Integer>();

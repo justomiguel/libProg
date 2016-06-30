@@ -9,7 +9,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-public class BuscandoParejas {
+public final class BuscandoParejas {
+    
+    private BuscandoParejas() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
 //ambiente
 

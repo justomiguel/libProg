@@ -17,7 +17,7 @@ import static com.frre.library.data.Constants.*;
  *
  * @author developer
  */
-public class FuncionesDeArchivos {
+public final class FuncionesDeArchivos {
 
     private static HashMap<File, LectorArchivos> myArchs;
     private static HashMap<File, EscritorDeArchivos> myWrittenArchs;
@@ -25,6 +25,10 @@ public class FuncionesDeArchivos {
     static {
         myArchs = new HashMap<File, LectorArchivos>();
         myWrittenArchs = new HashMap<File, EscritorDeArchivos>();
+    }
+
+    private FuncionesDeArchivos() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
     }
 
     public static File abrir(String string) {

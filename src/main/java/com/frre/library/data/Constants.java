@@ -8,7 +8,7 @@ package com.frre.library.data;
  *
  * @author justomiguel
  */
-public class Constants {
+public final class Constants {
     
     public static final String DATE_SEPARATOR = "/";
     public static final String SPACE = " ";
@@ -30,4 +30,9 @@ public class Constants {
     public static final String NOT_SUPPORTED="Not supported yet.";
     public static final String COMMA = ",";
     public static final String DOT=".";
+
+    private Constants() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
+
 }
