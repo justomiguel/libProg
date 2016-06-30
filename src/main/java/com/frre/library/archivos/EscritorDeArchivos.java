@@ -10,9 +10,11 @@ import com.frre.library.data.Constants;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -159,13 +161,13 @@ public class EscritorDeArchivos {
             }
 
             String contents = finalBuilder.toString();
-            FileWriter fw = null;
+            FileOutputStream fos = new FileOutputStream(myFile.getAbsoluteFile());
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+            BufferedWriter bw = new BufferedWriter(outputStreamWriter);
 
-            fw = new FileWriter(myFile.getAbsoluteFile());
-            BufferedWriter bw = new BufferedWriter(fw);
             bw.write(contents);
             bw.close();
-            fw.close();
+            fos.close();
         } catch (Exception ex) {
             Utils.handleException(ex);
         }
