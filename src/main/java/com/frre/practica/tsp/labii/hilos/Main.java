@@ -6,8 +6,11 @@ import java.util.ArrayList;
 /**
  * Created by jvargas on 8/28/15.
  */
-public class Main {
+public final class Main {
 
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args) throws Exception {
 

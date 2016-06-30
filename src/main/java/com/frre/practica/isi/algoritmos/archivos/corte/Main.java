@@ -9,7 +9,7 @@ import java.io.File;
 /**
  * Created by jvargas on 8/20/15.
  */
-public class Main {
+public final class Main {
 
     //ambiente
 
@@ -28,6 +28,9 @@ public class Main {
     //archivo
     private static File archivo;
 
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     //algoritmo
     public static void main(String[] args){

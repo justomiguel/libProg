@@ -13,10 +13,14 @@ import java.util.Random;
  *
  * @author justomiguel
  */
-public class Generador {
+public final class Generador {
     
     private static Random rnd = new Random();
-    
+
+    private Generador() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instntiation");
+    }
+
     public static String generarApellidoAleatorio(){
         String appelidos = DataSource.apellidos;
         String[] split = appelidos.split(Constants.NEW_LINE);

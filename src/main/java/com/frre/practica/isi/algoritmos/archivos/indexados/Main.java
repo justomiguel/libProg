@@ -10,7 +10,7 @@ import java.io.File;
 /**
  * Created by jvargas on 8/20/15.
  */
-public class Main {
+public final class Main {
 
     //ambiente
 
@@ -33,6 +33,9 @@ public class Main {
     private static Bono bonos;
     private static File archivoIndexado;
 
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     //algoritmo
     public static void main(String[] args){

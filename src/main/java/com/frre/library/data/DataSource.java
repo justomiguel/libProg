@@ -8,7 +8,7 @@ package com.frre.library.data;
  *
  * @author justomiguel
  */
-public class DataSource {
+public final class DataSource {
     
     public static String apellidos = "Roma\n" +
 "Buzón\n" +
@@ -3361,5 +3361,9 @@ public class DataSource {
 "SANTA CRUZ                                        \n" +
 "TIERRA DEL FUEGO                                  \n" +
 "CIUDAD AUTONOMA BUENOS AIRES";
-    
+
+    private DataSource() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instntiation");
+    }
+
 }

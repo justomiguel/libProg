@@ -5,7 +5,11 @@ import java.io.*;
 /**
  * Created by jvargas on 9/12/15.
  */
-public class Main {
+public final class Main {
+
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args){
         File dir = new File("./fotos");

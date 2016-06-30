@@ -8,7 +8,11 @@ package com.frre.practica.isi.algoritmos.archivos.lectura;
 /**
  * Created by jvargas on 8/20/15.
  */
-public class Main {
+public final class Main {
+
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args){
         //muestra de funciones con archivos

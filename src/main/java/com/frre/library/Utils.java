@@ -19,8 +19,11 @@ import com.frre.library.data.Constants;
  *
  * @author Cleo
  */
-public class Utils {
-   
+public final class Utils {
+
+    private Utils() throws InstantiationException {
+     throw new InstantiationException("This class is not created for instantiation");   
+    }
 
     public static <T> T tranformAccordingType(Class<T> type, String string) {
 

@@ -8,7 +8,11 @@ import java.util.Comparator;
 /**
  * Created by justo on 02/05/16.
  */
-public class Main {
+public final class Main {
+
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args){
         //se define un numero para el arreglo

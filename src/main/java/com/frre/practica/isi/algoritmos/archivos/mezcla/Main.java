@@ -12,7 +12,7 @@ import static com.frre.library.archivos.FuncionesDeArchivos.*;
 /**
  * Created by jvargas on 8/21/15.
  */
-public class Main {
+public final class Main {
 
 
     //ambiente
@@ -26,6 +26,9 @@ public class Main {
     private static File archivoPersonalExterno;
     private static File archivoFinal;
 
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     //algoritmo
     public static void main(String[] args){

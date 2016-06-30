@@ -5,7 +5,11 @@ import java.util.Arrays;
 /**
  * Created by justo on 12/05/16.
  */
-public class Main {
+public final class Main {
+
+    private Main() throws InstantiationException {
+        throw new InstantiationException("This class is not created for instantiation");
+    }
 
     public static void main(String[] args){
         int[] arreglo = {7,51,1,12,34,1,23,45,67};
