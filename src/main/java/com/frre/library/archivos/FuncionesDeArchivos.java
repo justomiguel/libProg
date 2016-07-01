@@ -4,8 +4,10 @@ import com.frre.library.Utils;
 
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import static com.frre.library.data.Constants.*;
 
@@ -61,13 +63,14 @@ public final class FuncionesDeArchivos {
             }
 
             if (arch.exists()) {
-                FileWriter fw = null;
+                FileOutputStream fos;
                 try {
-                    fw = new FileWriter(arch.getAbsoluteFile());
-                    BufferedWriter bw = new BufferedWriter(fw);
+                    fos = new FileOutputStream(arch.getAbsoluteFile());
+                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
+                    BufferedWriter bw = new BufferedWriter(outputStreamWriter);
                     bw.write("");
                     bw.close();
-                    fw.close();
+                    fos.close();
                     EscritorDeArchivos esc = new EscritorDeArchivos(arch);
                     myWrittenArchs.put(arch, esc);
                 } catch (IOException ex) {

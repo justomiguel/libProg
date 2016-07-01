@@ -19,7 +19,7 @@ public final class BuscandoParejas {
 
     //algoritmo
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in, "UTF-8");
 
         int cantHombres = sc.nextInt();
         int cantMujeres = sc.nextInt();

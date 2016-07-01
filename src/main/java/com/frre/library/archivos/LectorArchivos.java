@@ -10,9 +10,11 @@ import com.frre.library.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 /**
@@ -40,9 +42,9 @@ public class LectorArchivos<T> {
         theContents = (ArrayList<Object>) new ArrayList<T>();
         try {
             //use buffering, reading one line at a time
-            //FileReader always assumes default encoding is OK!
-            FileReader reader = new FileReader(myFile);
-            BufferedReader input = new BufferedReader(reader);
+            FileInputStream fis = new FileInputStream(myFile);
+            InputStreamReader inputStreamReader = new InputStreamReader(fis, StandardCharsets.UTF_8);
+            BufferedReader input = new BufferedReader(inputStreamReader);
             lines = new ArrayList<String>();
             try {
                 String line; //not declared within while loop
@@ -67,7 +69,7 @@ public class LectorArchivos<T> {
 
             } finally {
                 input.close();
-                reader.close();
+                fis.close();
             }
         } catch (Exception ex) {
             Utils.handleException(ex);

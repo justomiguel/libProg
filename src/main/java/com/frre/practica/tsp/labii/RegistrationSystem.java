@@ -13,7 +13,7 @@ public final class RegistrationSystem {
     }
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "UTF-8");
         int cantString = scanner.nextInt();
 
         HashMap<String, Integer> mapaValores = new HashMap<String, Integer>();
